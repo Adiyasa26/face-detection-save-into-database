@@ -15,13 +15,17 @@ import datetime
 from datetime import date
 import uuid
 
+# firebase
 current_time = datetime.datetime.now() 
 
+#firebase
 cred = credentials.Certificate("tmb-telkom-firebase-adminsdk-nr87a-83aa727c4f.json")
 firebase_admin.initialize_app(cred)
 
+#firebase
 db = firestore.client()
 
+#firebaase
 def set_data(label):
     doc_ref = db.collection(u'mask-detection').document(uuid.uuid4().hex)
     doc_ref.set({
@@ -121,10 +125,12 @@ def mask_detection_label():
             if mask > withoutMask:
                 label = "Mask"
                 color = (0, 255, 0)
+                #firebaase
                 set_data(label)
             else:
                 label = "No Mask"
                 color = (0, 0, 255)
+                #firebaase
                 set_data(label)
         
             # include the probability in the label
