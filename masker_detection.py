@@ -90,7 +90,6 @@ def mask_detection_prediction(frame, faceNet, maskNet):
 
 # load our serialized face detector model from disk
 def mask_detection_label():
-    masker = []
     prototxtPath = join("deploy.prototxt")
     weightsPath = join("res10_300x300_ssd_iter_140000.caffemodel")
 
